@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Company_imple extends CommonMember implements Company{
+public class Company_imple extends CommonMember {
 // Company 클래스는 CommonMember 클래스에 생성되어진 field 및 method 및 생성자를 상속받아온다.
 // CommonMember 클래스는 Company  클래스의 부모클래스가 되어지고,
 // Company 클래스는 CommonMember  클래스의 자식클래스가 되어진다.

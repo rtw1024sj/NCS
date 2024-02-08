@@ -8,7 +8,11 @@ import java.util.regex.Pattern;
 import my.util.MyUtil;
 
 // >> 미완성 클래스 (== 추상 클래스  == abstract)
-public class CommonMember {
+public abstract class CommonMember implements Common {	
+	// Common interface 에 있는 것을 구현해야 하지만
+	// 어차피 자식클래스인 Gujikja.imple 과 Company.imple 에 getInfo() 가 override(재정의) 되어 있기 때문에
+	// 부모인 CommonMember 에서는 getInfo() 를 사용할 필요가 없기 때문에
+	// 미완성되어진 클래스인 abstract 클래스로 만들어준다.
 
 	// Gujikja 클래스와 Company 클래스에서 공통으로 사용되어지는 field(속성) 생성하기
 	private int type;				// Gujikja 와 Company 를 구분짓는 용도. type 값이 1 이라면 Gujikja 라 보고, type 값이 2 이라면 Company 라 본다
@@ -180,5 +184,9 @@ public class CommonMember {
 	String parent_test() {
 		return "부모클래스에서 만들었어요. 그냥 연습입니다.";
 	}
+
+
+
+
 
 }

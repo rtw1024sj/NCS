@@ -57,9 +57,10 @@ public class Main_gujikja_company {
 		
         ///////////////////////////////////////////////		
 		
-		Recruit[] rc_arr = new Recruit[10];
+		// interface 로 받아온다.
+		Recruit[] rc_arr = new Recruit_imple[10];
 
-		Recruit rc1 = new Recruit();
+		Recruit_imple rc1 = new Recruit_imple();
 		rc1.setCp(cp1);
 		rc1.setSubject("성실한 사무직원을 채용합니다.");
 		rc1.setWork_type("사무직");
@@ -67,10 +68,10 @@ public class Main_gujikja_company {
 		rc1.setYearpay(4000);
 		rc1.setFinish_day("20241208");		// 나중에 마감일자보다 지금 날짜가 이후이면 에러뜰 수도 있다.
 		
-		rc_arr[Recruit.count++] = rc1;
+		rc_arr[Recruit_imple.count++] = rc1;
 
 
-		Recruit rc2 = new Recruit();
+		Recruit_imple rc2 = new Recruit_imple();
 		rc2.setCp(cp2);
 		rc2.setSubject("우수한 기술직원을 채용합니다.");
 		rc2.setWork_type("기술직");
@@ -78,9 +79,9 @@ public class Main_gujikja_company {
 		rc2.setYearpay(4500);
 		rc2.setFinish_day("20241207");
 		
-		rc_arr[Recruit.count++] = rc2;
+		rc_arr[Recruit_imple.count++] = rc2;
 
-		Recruit rc3 = new Recruit();
+		Recruit_imple rc3 = new Recruit_imple();
 		rc3.setCp(cp2);
 		rc3.setSubject("참신한 영업직원을 채용합니다");
 		rc3.setWork_type("영업직");
@@ -88,7 +89,7 @@ public class Main_gujikja_company {
 		rc3.setYearpay(5000);
 		rc3.setFinish_day("20241202");
 		
-		rc_arr[Recruit.count++] = rc3;
+		rc_arr[Recruit_imple.count++] = rc3;
 		
         ///////////////////////////////////////////////
 //		CommonMember cmbr = new CommonMember();	
@@ -138,9 +139,9 @@ public class Main_gujikja_company {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		Ctrl_common ctrl_common = new Ctrl_common();
-		Ctrl_gujikja ctrl_gu = new Ctrl_gujikja();
-		Ctrl_company ctrl_cp = new Ctrl_company();
+		Ctrl_common ctrl_common = new Ctrl_common_imple();
+		Ctrl_gujikja ctrl_gu = new Ctrl_gujikja_imple();
+		Ctrl_company ctrl_cp = new Ctrl_company_imple();
 		
 		String str_menuno = "";
 		do {
@@ -173,7 +174,7 @@ public class Main_gujikja_company {
 					break;	
 					// leess
 					// abCd12345$
-
+					
 				case "4": // 구인회사 로그인
 					// 부모 클래스 CommonMember 로 받지만 실제로는 Company 이다.
 					CommonMember login_cp = ctrl_common.login(sc, cmbr_arr, 2);
