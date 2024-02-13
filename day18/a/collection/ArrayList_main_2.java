@@ -325,15 +325,24 @@ public class ArrayList_main_2 extends Member{
 				List<Member> copy		= 	  new ArrayList<>(mbrList);
 			
 			// 0 1 2 3 4 5 6 7 8 9 10  		0 1 2 3 4 5 6 7 8 9 10
+			// 새로운 ArrayList<> 를 만들어서 mbrList 에 있는 값을 복사한다.
 			
 	        
 	        for(Member mbr : copy) {				// mbr 은 11번 반복
 	        	if (mbr.gender().equals("남"))  {	// 남자일 경우
 	        		mbrList.remove(mbr);			// 원래 썼던 mbrList 의 값을 지운다.
+	        										// 이 때 copy 에 저장된 배열은 그대로이기 때문에 mbr 횟수에는 변함이 없다.
 	        	}
-
 	        } // end of for-------------------------------
-
+	        
+	        System.out.println("copy 시작 =====================================\n");
+	        for(Member mbr : copy) {				// mbr 은 11번 반복
+	        		System.out.println(mbr);		// 원래 썼던 mbrList 의 값을 지운다.
+	        										// 이 때 copy 에 저장된 배열은 그대로이기 때문에 mbr 횟수에는 변함이 없다.
+	        } // end of for-------------------------------
+	        System.out.println("copy 끝 =====================================\n");
+	        
+	        
 	        for(Member mbr : mbrList) {				// 남자 다 빠진 3개만 남음 
 	         	  System.out.println(mbr);  		// 여자 3번 출력
 	        } // end of for-------------------------------	 
@@ -416,7 +425,7 @@ public class ArrayList_main_2 extends Member{
 	        mbrList.clear();
 	        
 	        System.out.println(">> 삭제한 후 mbrList.size() => " + mbrList.size());
-	        // >> 삭제한 후 mbrList.size() => 
+	        // >> 삭제한 후 mbrList.size() => 0
 	        
 	} // end of main() ------------------------------------
 

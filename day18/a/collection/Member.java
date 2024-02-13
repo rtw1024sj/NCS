@@ -21,8 +21,6 @@ public class Member {
 	
 	@Override
 	public String toString() {
-		
-		
 			return "=== " + name + "님의 회원정보 === \n"
 				 + "1. 아이디 : " + id + "\n"
 			     + "2. 비밀번호 : " + passwd + "\n" 
